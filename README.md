@@ -15,19 +15,6 @@ The code is modular and extensible to support various scatterer geometries, incl
 
 ---
 
-## Features
-
-- Synthetic data generation for 2D inverse scattering problems
-- Finite element discretization using NGSolve
-- Parametric mesh generation for diverse scatterer geometries
-- Solving the Helmholtz equation with complex refractive index contrasts
-- Discretized Born operator for linearized inversion
-- Parallel sample generation using Python's `concurrent.futures`
-- Output written in HDF5 format for downstream ML tasks
-- Optional plotting for visual verification of each sample
-
----
-
 ## File Structure
 
 - `circles.py`: Main driver script for sample generation and dataset writing
