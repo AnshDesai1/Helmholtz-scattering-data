@@ -70,3 +70,15 @@ python3 circles.py \
 | `--debug`             | `-d`   | `flag`   | `False`             | Enable debug-level logging                                                  |
 
 
+
+## Citation
+If you find this code useful, please cite the associated preprint:
+@misc{desai2025neuralnetworkenhancedborn,
+      title={A Neural Network Enhanced Born Approximation for Inverse Scattering}, 
+      author={Ansh Desai and Timo Lahivaara and Peter Monk},
+      year={2025},
+      eprint={2503.01596},
+      archivePrefix={arXiv},
+      primaryClass={math.NA},
+      url={https://arxiv.org/abs/2503.01596}, 
+}
