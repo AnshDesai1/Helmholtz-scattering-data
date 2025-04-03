@@ -15,19 +15,6 @@ The code is modular and extensible to support various scatterer geometries, incl
 
 ---
 
-## Features
-
-- Synthetic data generation for 2D inverse scattering problems
-- Finite element discretization using NGSolve
-- Parametric mesh generation for diverse scatterer geometries
-- Solving the Helmholtz equation with complex refractive index contrasts
-- Discretized Born operator for linearized inversion
-- Parallel sample generation using Python's `concurrent.futures`
-- Output written in HDF5 format for downstream ML tasks
-- Optional plotting for visual verification of each sample
-
----
-
 ## File Structure
 
 - `circles.py`: Main driver script for sample generation and dataset writing
@@ -49,11 +36,37 @@ All data is saved in an HDF5 file containing:
 
 # Basic usage:
 python3 circles.py \
-  --base-index=0 \             # Starting index in the dataset
-  --n-sample=10 \              # Number of samples to generate in this batch
-  --n-sample-max=20000 \       # Maximum total number of samples in the dataset
-  --data-file=results.hdf5 \   # Output HDF5 file path
-  --generate-plots \           # Optional: enable plot generation
-  --plot-dir=plots/ \          # Optional: directory to save plots
-  --debug                      # Optional: enable debug-level logging
+  --base-index=0 \
+  --n-sample=10 \
+  --n-sample-max=20000 \
+  --data-file=results.hdf5 \
+  --generate-plots \
+  --plot-dir=plots/ \
+  --debug
 
+### Command-Line Argument Reference
+
+| Argument              | Short | Type     | Default             | Description                                                                 |
+|-----------------------|--------|----------|---------------------|-----------------------------------------------------------------------------|
+| `--base-index`        | `-i`   | `int`    | `0`                 | Starting index for writing to the HDF5 file                                 |
+| `--n-sample`          | `-n`   | `int`    | `100`               | Number of new samples to generate                                           |
+| `--n-sample-max`      | `-N`   | `int`    | `20000`             | Total possible samples in the HDF5 file                                     |
+| `--data-file`         | `-f`   | `str`    | `circ_data.hdf5`    | Path to the output HDF5 data file                                           |
+| `--generate-plots`    | `-p`   | `flag`   | `False`             | Enable saving plots of each sample                                          |
+| `--plot-dir`          | `-D`   | `str`    | `./plots`           | Directory to save generated plots                                           |
+| `--debug`             | `-d`   | `flag`   | `False`             | Enable debug-level logging                                                  |
+
+
+
+## Citation
+If you find this code useful, please cite the associated preprint:
+```bibtex
+@misc{desai2025neuralnetworkenhancedborn,
+  title     = {A Neural Network Enhanced Born Approximation for Inverse Scattering},
+  author    = {Ansh Desai and Timo Lahivaara and Peter Monk},
+  year      = {2025},
+  eprint    = {2503.01596},
+  archivePrefix = {arXiv},
+  primaryClass  = {math.NA},
+  url       = {https://arxiv.org/abs/2503.01596}
+}
