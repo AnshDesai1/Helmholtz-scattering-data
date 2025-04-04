@@ -56,7 +56,7 @@ python3 circles.py \
 | `--plot-dir`          | `-D`   | `str`    | `./plots`           | Directory to save generated plots                                           |
 | `--debug`             | `-d`   | `flag`   | `False`             | Enable debug-level logging                                                  |
 
-
+---
 
 ## Citation
 If you find this code useful, please cite the associated preprint:
